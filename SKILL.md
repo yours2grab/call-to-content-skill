@@ -127,7 +127,19 @@ Never silently auto-picks without showing the full list first.
 
 The default output of this skill is an article brief, not short posts.
 
-**First, act as an analyst, not an editor.** Group the mined angles into the real candidate big ideas the call actually contains (usually 1-3). For each, give a line or two: what it's about, roughly how much of the call it covers. Show this list and ask which one to build the brief around. Only skip the question if the call genuinely has one dominant idea with nothing else competing for it.
+**First, act as an analyst, not an editor.** Group the mined angles into the real candidate big ideas the call actually contains (usually 1-3). Present them exactly like this, tested live and working:
+
+```
+[Step 6 — Article Brief] Candidate big ideas mined from this call:
+
+1. **[short label]** — [what it's about]. [Roughly how much of the call it covers, and why — the real weight, not the punchiest line.]
+2. **[short label]** — [what it's about]. [Weight.]
+3. **[short label]** — [what it's about]. [Weight.]
+
+Which one do you want the brief built around?
+```
+
+Only skip the question if the call genuinely has one dominant idea with nothing else competing for it.
 
 **Then produce the brief.** Go to `framework.md`'s "Optional: article brief instead of short drafts" section, building it around the confirmed idea. Same hard rules and gate-check still apply.
 
