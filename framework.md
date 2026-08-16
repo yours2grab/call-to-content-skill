@@ -79,11 +79,11 @@ Validated against two real calls (a coaching call and a client consulting call),
 If the user asks for a brief instead of finished posts ("give me an article brief," "I want to hand this to an article writer"), skip Step 6's short-draft format and produce this instead:
 
 - **Working angle** — one line, the article's likely center of gravity, plus what it pushes against if there's a clear one in the material.
-- **Why section** — 2-3 short paragraphs of context/opinion (not steps yet), each grounded in a real, fuller quote from the transcript, not a one-liner. Include the surrounding exchange when it adds something, who asked, what prompted the answer.
+- **Why section** — 2-3 short paragraphs stating the problem as it shows up broadly in a coaching or creator business, not just on this one call, each backed by a real, fuller quote from the transcript as proof, not a one-liner.
 - **Steps section** — the real process broken into as many steps as the material actually supports, each step paired with the real quote or moment that grounds it, plus a sentence of context.
 - **Extra raw material** — any other strong quotes or moments mined but not used above, so the person writing the article has more than the minimum to work with.
 
-**Never open the why section with a narrator frame** ("a client of mine," "someone I advise," "I was on a call with"). State the problem itself first, directly, then the quote that proves it. The call is the source, not the subject, don't make the write-up about the relationship to the person on it.
+**Never open the why section with a narrator frame** ("a client of mine," "someone I advise," "I was on a call with"), and never attribute a quote to a role label either ("the educator," "the consultant," "on a call reviewing his lead magnet"). The reader doesn't know who was on the call and doesn't need to. State the problem itself first, directly, the way it shows up across coaching/creator businesses generally, then let the quote stand on its own as the proof, then move to the steps. The call is raw material, not the subject, don't make the write-up about who said what to whom.
 
 This is deliberately more raw and less finished than a short draft, it's material for a writer to work from, not a ready-to-post piece. Same hard rules apply: nothing invented, every quote real, names anonymized per the standing default.
 
