@@ -2,7 +2,7 @@
 
 Every batch of drafts this skill generates lands here.
 
-**Filename pattern:** `call-to-linkedin-{slug}-{YYYY-MM-DD}.md`
+**Filename pattern:** `call-to-content-{slug}-{YYYY-MM-DD}.md`
 
 If you run the skill more than once on the same day for the same call, versions are appended: `-v2`, `-v3`, etc. Nothing gets overwritten.
 

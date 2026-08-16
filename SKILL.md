@@ -1,9 +1,9 @@
 ---
-name: call-to-linkedin-content
-description: "Turn a call recording transcript (client call, sales call, coaching call, podcast) into finished, ready-to-post LinkedIn drafts in your own voice. Guided voice setup on first run (upload a voice doc or a 50-question interview, plus 3 of your real posts), asked once and remembered after. No API keys ever, paste a transcript or point at an exported file, or auto-pull from Fireflies if it's already connected in your Claude account. MANDATORY triggers on: call to linkedin, call to content, transcript to linkedin, turn this call into a post, linkedin from transcript, /call-to-linkedin-content."
+name: call-to-content
+description: "Turn a call recording transcript (client call, sales call, coaching call, podcast) into finished, ready-to-post LinkedIn drafts in your own voice. Guided voice setup on first run (upload a voice doc or a 50-question interview, plus 3 of your real posts), asked once and remembered after. No API keys ever, paste a transcript or point at an exported file, or auto-pull from Fireflies if it's already connected in your Claude account. MANDATORY triggers on: call to content, call to linkedin, transcript to linkedin, turn this call into a post, linkedin from transcript, /call-to-content."
 ---
 
-# Call to LinkedIn Content
+# Call to Content
 
 Turn a call you've already had into LinkedIn posts you can actually publish. Not a list of ideas, not a summary, finished drafts.
 
@@ -187,7 +187,7 @@ State which draft you're rewriting before rewriting it.
 On "ship it":
 
 1. **Save location:** `./outputs/` in the current working directory. Create it if missing. Never save inside the installed skill's own folder (resolves to a hidden system path the user can't find). If not writable, fall back to `~/Downloads/`, no asking.
-2. **Filename:** `call-to-linkedin-{slug}-{YYYY-MM-DD}.md`, slug from intake Q1, lowercase, dashes, max 40 chars.
+2. **Filename:** `call-to-content-{slug}-{YYYY-MM-DD}.md`, slug from intake Q1, lowercase, dashes, max 40 chars.
 3. **Versioning:** if the filename exists, append `-v2`, `-v3`, never overwrite.
 4. **Content:** all finished drafts, plus a short "other angles surfaced, not drafted" list at the bottom (single run only, not a persistent cross-session file).
 5. **Report:** full path, word counts per draft, voice status (custom / fallback).

@@ -1,4 +1,4 @@
-# Call to LinkedIn Content
+# Call to Content
 
 Turn a call you've already had into LinkedIn posts you can actually publish. Paste a transcript, answer 3 quick questions, get finished drafts back in your own voice.
 
@@ -32,13 +32,13 @@ Course creators, coaches, consultants, and cohort/workshop organizers who are al
 
 Drop this entire folder into your Claude Code skills directory:
 
-- **macOS:** `~/.claude/skills/call-to-linkedin-content/`
-- **Or per-project:** `<your-project>/.claude/skills/call-to-linkedin-content/`
+- **macOS:** `~/.claude/skills/call-to-content/`
+- **Or per-project:** `<your-project>/.claude/skills/call-to-content/`
 
 Verify the structure looks like this:
 
 ```
-call-to-linkedin-content/
+call-to-content/
   SKILL.md
   README.md
   framework.md
@@ -73,7 +73,7 @@ You can either paste the raw text into the chat, or point the skill at a local `
 In Claude Code, type:
 
 ```
-/call-to-linkedin-content
+/call-to-content
 ```
 
 or just describe what you want:
@@ -81,12 +81,12 @@ or just describe what you want:
 ```
 "Turn this call into LinkedIn posts"
 "I have a client call I want to turn into content"
-"call to linkedin"
+"call to content"
 ```
 
 ### 4. Set up once (first run only)
 
-The skill walks you through this before drafting anything, and only ever asks once: upload a voice doc you already have, or answer a guided interview (about 50 questions, you can move fast through the non-core ones), plus 3 LinkedIn posts you've actually written, that's the single most important input. Same pass also sets your standing defaults, whether to anonymize names by default, anyone always off-limits, how many drafts you usually want.
+The skill walks you through this before drafting anything, and only ever asks once: upload a voice doc you already have, or answer a guided interview (about 50 questions, if you're short on time you can start with the most important ones), plus 3 LinkedIn posts you've actually written, that's the single most important input. Same pass also sets your standing defaults, whether to anonymize names by default, anyone always off-limits, how many drafts you usually want.
 
 Skip voice setup and the skill falls back to a generic voice with `[VOICE NEEDS CUSTOMIZING]` flags on every draft. It works, but your real voice always outperforms the fallback.
 
@@ -106,7 +106,7 @@ You get finished, ready-to-post drafts, not outlines. Tell the skill what to cha
 
 On "ship it," the skill saves to **`outputs/`** inside the skill folder and reports the path, word counts, and voice status.
 
-Filename pattern: `call-to-linkedin-{slug}-{YYYY-MM-DD}.md`. Re-runs append `-v2`, `-v3`, never overwrite.
+Filename pattern: `call-to-content-{slug}-{YYYY-MM-DD}.md`. Re-runs append `-v2`, `-v3`, never overwrite.
 
 ---
 
