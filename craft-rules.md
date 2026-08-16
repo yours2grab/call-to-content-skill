@@ -41,6 +41,17 @@ Never put an em dash (`—`) in a draft. It reads as AI-generated. Use a period,
 
 ---
 
+## Every draft: why, then steps
+
+This is the shape of every draft this skill produces, not just ones tagged "how-to."
+
+1. Hook (≤8 words)
+2. Why this matters, 2-4 sentences, the opinion or context. Wherever the angle's story or contrarian take lives, it lives here, kept short.
+3. The steps. Numbered or arrow-led (→). 3-6 real actions, not phases or morals. This is the dominant part of the post, the reason someone screenshots it.
+4. A question or soft CTA to close.
+
+A step earns its place by being something a reader could literally go do. "Nurture your list" is not a step. "Send 3 real emails a week, not a newsletter blast" is. If an angle can't produce real steps, it wasn't strong enough to draft in the first place, go back to the mined list and pick a different one.
+
 ## Format (LinkedIn-native, not generic copywriting)
 
 - Hook: one line, max 8 words, no period at the end

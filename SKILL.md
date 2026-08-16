@@ -18,6 +18,7 @@ Turn a call you've already had into LinkedIn posts you can actually publish. Not
 3. **Never the em dash.** Never bold. Never stacked negatives ("No X. No Y. No Z."). Never "Here's the thing" / "Let's dive in" / "In today's fast-paced world."
 4. **Hook ≤ 8 words. Body 120-300 words preferred, 400 hard max.**
 5. **Every draft must trace to a specific, concrete transcript detail** — a real quote, number, or moment. A draft that could've been written without reading the transcript is a failed draft, full stop.
+5b. **Every draft follows the why-then-steps shape** (see `framework.md` / `craft-rules.md`): a short why, then 3-6 real, numbered steps. This applies to every draft, not just ones tagged "how-to." A draft with no concrete steps is a failed draft.
 6. **One file write per run.** Saves to `./outputs/` in the current working directory, never inside the skill's own installed folder.
 
 ---
@@ -102,7 +103,7 @@ See `intake-questions.md` for the full first-run version of these questions (use
 
 ## STEP 4 — MINE THE TRANSCRIPT
 
-Per `framework.md`: read the full transcript for emotional moments, concrete details, quotable lines, tension/contrast, and turning points. Produce up to 10 candidate angles, each tagged with a content type (personal story / contrarian take / lesson / case study / behind-the-scenes) and a rough hook idea.
+Per `framework.md`: read the full transcript for emotional moments, concrete details, quotable lines, tension/contrast, turning points, and any real process someone walked through step by step. Produce up to 10 candidate angles, each tagged with a content type (personal story / contrarian take / lesson / case study / behind-the-scenes / how-to) and a rough hook idea. A how-to angle needs actual numbered steps available in the material, not just a described process, don't force one that isn't really there.
 
 Ideas come only from the transcript. Never blend in outside knowledge or generic advice about the topic.
 
@@ -110,13 +111,19 @@ Ideas come only from the transcript. Never blend in outside knowledge or generic
 
 ## STEP 5 — SHOW ANGLES, RECOMMEND TOP N
 
-Print the full mined list (1-2 lines each). Mark the recommended subset (default 3, per Step 3's answer) chosen for content-type diversity and specificity, least generic first cut.
+Print the full mined list (1-2 lines each). Mark the recommended subset (default 3, per Step 3's answer) chosen for content-type diversity and specificity, least generic first cut. If a genuine how-to angle was mined, it's always in the recommended set, a batch that skips real how-to material in favor of another story is weaker, not more varied.
 
 Ask:
 
 > "Draft these {N}? Pick different ones, say 'all', or name numbers."
 
 Never silently auto-picks without showing the full list first.
+
+---
+
+## STEP 5.5 — ARTICLE BRIEF (alternate mode, on request)
+
+If the user asks for a brief instead of finished posts, skip to `framework.md`'s "Optional: article brief instead of short drafts" section and produce that instead of Step 6-9's short drafts. Same hard rules and gate-check still apply.
 
 ---
 
@@ -134,6 +141,8 @@ For each selected angle, write one finished, ready-to-post draft using `craft-ru
 - Ends on a question or soft CTA, never "book a call" or fake scarcity?
 - Traces to a specific transcript detail, not generic filler?
 - No unapproved real client or company name?
+- Has a short why (2-4 sentences) followed by 3-6 real, numbered steps, not a story with a moral instead of steps?
+- Is each step an actual action, not a vague phase ("send 3 emails a week" not "nurture your list")?
 
 **Then, once all drafts in the batch exist, run one more pass across the whole batch:** does any draft share a core line or insight with another draft in this batch (per `craft-rules.md`'s batch rule)? If two drafts converge on the same takeaway, rewrite one around a different mined angle before presenting anything. Never present a batch where two drafts feel interchangeable.
 
@@ -154,6 +163,7 @@ Show a gate-check block first, then all drafts, using the `html-template.html` s
 ✓ No leaked names
 ✓ No repeated lines across drafts
 ✓ Hook ≤ 8 words, all drafts
+✓ Why + real steps, every draft
 ```
 
 This is the only place Step 6's checks become visible. Don't narrate individual rewrites in chat, just report the final state here.
