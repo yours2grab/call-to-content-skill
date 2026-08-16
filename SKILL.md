@@ -20,6 +20,8 @@ Turn a call you've already had into an article brief, real quotes with context, 
 5. **Every draft must trace to a specific, concrete transcript detail** — a real quote, number, or moment. A draft that could've been written without reading the transcript is a failed draft, full stop.
 5b. **Every draft follows the why-then-steps shape** (see `framework.md` / `craft-rules.md`): a short why, then 3-6 real, numbered steps. This applies to every draft, not just ones tagged "how-to." A draft with no concrete steps is a failed draft.
 6. **One file write per run.** Saves to `./outputs/` in the current working directory, never inside the skill's own installed folder.
+7. **Article brief: one dominant idea, picked by the user, not silently by the skill.** See `framework.md`'s "One big idea, not four." Group the mined angles into the real candidate big ideas the call contains, show them, ask which one to build the brief around. Every step in the brief must then serve that one idea; a real finding that belongs to a smaller, separate theme goes to extra material instead of getting folded in.
+8. **Article brief: no crafted headline or tagline on the presented output.** The working angle is internal, for the copywriter who picks up the brief next, not a title. If a heading is needed at all, use a neutral label describing the call itself.
 
 ---
 
@@ -123,7 +125,11 @@ Never silently auto-picks without showing the full list first.
 
 ## STEP 6 — ARTICLE BRIEF (default output)
 
-The default output of this skill is an article brief, not short posts. Go to `framework.md`'s "Optional: article brief instead of short drafts" section and produce that. Same hard rules and gate-check still apply. Validated against two real calls, this is the standard path, not a fallback.
+The default output of this skill is an article brief, not short posts.
+
+**First, act as an analyst, not an editor.** Group the mined angles into the real candidate big ideas the call actually contains (usually 1-3). For each, give a line or two: what it's about, roughly how much of the call it covers. Show this list and ask which one to build the brief around. Only skip the question if the call genuinely has one dominant idea with nothing else competing for it.
+
+**Then produce the brief.** Go to `framework.md`'s "Optional: article brief instead of short drafts" section, building it around the confirmed idea. Same hard rules and gate-check still apply.
 
 **If the user asks for finished short LinkedIn posts instead** ("give me posts," "I just want drafts, not a brief"), use the alternate short-draft flow below instead of the brief.
 
