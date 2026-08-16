@@ -1,6 +1,6 @@
 # Call to Content
 
-Turn a call you've already had into LinkedIn posts you can actually publish. Paste a transcript, answer 3 quick questions, get finished drafts back in your own voice.
+Turn a call you've already had into an article brief, real quotes with context, structured why-then-steps, ready to hand to an article writer. Paste a transcript, answer a couple of quick questions, get that back in your own voice. Want short, finished LinkedIn drafts instead? Just ask.
 
 This is the exact system used to turn client calls into content, repackaged as a Claude Code skill so you can run it yourself.
 
@@ -18,8 +18,8 @@ Course creators, coaches, consultants, and cohort/workshop organizers who are al
 
 ## What you get
 
-1. **The mining/drafting method** ([framework.md](framework.md)) — how a transcript becomes finished posts, not just a list of ideas.
-2. **LinkedIn craft rules** ([craft-rules.md](craft-rules.md)) — the rules that separate a post that gets read from a post that gets scrolled past.
+1. **The mining/drafting method** ([framework.md](framework.md)) — how a transcript becomes an article brief (or short posts, on request), not just a list of ideas.
+2. **LinkedIn craft rules** ([craft-rules.md](craft-rules.md)) — the rules that separate a post that gets read from a post that gets scrolled past, used for the short-draft mode.
 3. **Guided voice setup** ([voice-template.md](voice-template.md), [voice-interview-questions.md](voice-interview-questions.md)) — upload your own voice doc, or answer a 50-question interview, plus 3 real posts you've written. The skill writes in your voice, not a generic one.
 4. **A bundled fallback voice** ([voice-reference.md](voice-reference.md)) — works out of the box before you've done your own setup, and doubles as an example of what a filled-in voice file looks like.
 5. **The skill itself** ([SKILL.md](SKILL.md)) — the workflow that ties it all together.
@@ -96,17 +96,19 @@ Just: whose call is this and what's your role (the one thing that genuinely chan
 
 ### 6. Review the mined angles
 
-The skill mines the transcript for real moments (stories, contrarian takes, lessons, case studies) and shows you the full list before drafting anything. Confirm the recommended picks, or choose your own.
+The skill mines the transcript for real moments (stories, contrarian takes, lessons, case studies, how-tos) and shows you the full list before writing anything. Confirm the recommended picks, or choose your own.
 
-### 7. Review the drafts, revise, ship
+### 7. Review the brief, revise, ship
 
-You get finished, ready-to-post drafts, not outlines. Tell the skill what to change, or say "ship it." Up to 5 revision rounds.
+By default you get an article brief: a working angle, a why section with real quotes and context, a steps section with real quotes and context, and any extra material mined but not used. Not a finished post, raw material for an article. Tell the skill what to change, or say "ship it." Up to 5 revision rounds.
+
+Want finished, ready-to-post LinkedIn drafts instead? Say so, "give me short posts instead," and you'll get those instead of the brief.
 
 ### 8. Ship it
 
-On "ship it," the skill saves to **`outputs/`** inside the skill folder and reports the path, word counts, and voice status.
+On "ship it," the skill saves to **`outputs/`** inside the skill folder and reports the path and voice status.
 
-Filename pattern: `call-to-content-{slug}-{YYYY-MM-DD}.md`. Re-runs append `-v2`, `-v3`, never overwrite.
+Filename pattern: `article-brief-{slug}-{YYYY-MM-DD}.md` for the default brief, or `call-to-content-{slug}-{YYYY-MM-DD}.md` for short drafts. Re-runs append `-v2`, `-v3`, never overwrite.
 
 ---
 
@@ -116,19 +118,19 @@ The skill enforces these. They are not optional.
 
 1. **Never fabricates.** No invented quotes, numbers, names, or outcomes. If it's not in the transcript, it's not in the draft.
 2. **Never leaks a real client or company name** unless you explicitly said it was fine in intake.
-3. **Every draft traces to a specific transcript detail.** A draft that could've been written without the call is a failed draft.
-4. **No em dashes, no bold, no stacked negatives, no LinkedIn "thought leader" clichés.**
-5. **You still ship it.** These are drafts. Read every one before posting.
+3. **Every quote and step traces to a specific transcript detail.** Content that could've been written without the call is a failed output.
+4. **No em dashes, no bold, no stacked negatives, no LinkedIn "thought leader" clichés** (short-draft mode).
+5. **You still ship it.** This is a brief or a set of drafts, not a finished, published piece. Read it before using it.
 
 ---
 
 ## What this skill is NOT
 
 - It's not a live integration for most note-takers. No API keys, ever. Fireflies is the one exception, if it's already connected in your own Claude account, the skill can pull your latest transcript automatically. Everything else, you bring the transcript.
-- It's not a content calendar or scheduler. It drafts, you post.
-- It's not an email or landing-page generator. LinkedIn posts only.
+- It's not a content calendar or scheduler. It hands you a brief or drafts, you post.
+- It's not an email or landing-page generator. LinkedIn content only.
 - It doesn't track to-dos or action items from the call. Content only.
-- It's not "publish and forget." The output is a draft. You ship the page... er, the post.
+- It's not "publish and forget." The output is raw material or a draft. You still write and ship the real thing.
 
 ---
 

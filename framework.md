@@ -74,6 +74,8 @@ If the mined angle is a story or a contrarian take rather than a literal process
 
 ## Optional: article brief instead of short drafts
 
+Validated against two real calls (a coaching call and a client consulting call), confirmed accurate against the source transcript both times, this is the locked format, not a draft idea.
+
 If the user asks for a brief instead of finished posts ("give me an article brief," "I want to hand this to an article writer"), skip Step 6's short-draft format and produce this instead:
 
 - **Working angle** — one line, the article's likely center of gravity, plus what it pushes against if there's a clear one in the material.

@@ -1,13 +1,13 @@
 ---
 name: call-to-content
-description: "Turn a call recording transcript (client call, sales call, coaching call, podcast) into finished, ready-to-post LinkedIn drafts in your own voice. Guided voice setup on first run (upload a voice doc or a 50-question interview, plus 3 of your real posts), asked once and remembered after. No API keys ever, paste a transcript or point at an exported file, or auto-pull from Fireflies if it's already connected in your Claude account. MANDATORY triggers on: call to content, call to linkedin, transcript to linkedin, turn this call into a post, linkedin from transcript, /call-to-content."
+description: "Turn a call recording transcript (client call, sales call, coaching call, podcast) into an article brief by default (real quotes, why-then-steps structure, ready to hand to an article writer), or finished short LinkedIn drafts on request, in your own voice. Guided voice setup on first run (upload a voice doc or a 50-question interview, plus 3 of your real posts), asked once and remembered after. No API keys ever, paste a transcript or point at an exported file, or auto-pull from Fireflies if it's already connected in your Claude account. MANDATORY triggers on: call to content, call to linkedin, transcript to linkedin, turn this call into a post, linkedin from transcript, /call-to-content."
 ---
 
 # Call to Content
 
-Turn a call you've already had into LinkedIn posts you can actually publish. Not a list of ideas, not a summary, finished drafts.
+Turn a call you've already had into an article brief, real quotes with context, structured why-then-steps, ready to hand to an article writer. Short, finished LinkedIn drafts are available on request instead. Not a list of ideas, not a summary, either way.
 
-**This skill always reminds you: read every draft before posting. It writes in your voice, you still ship it.**
+**This skill always reminds you: read the output before using it. It writes in your voice, you still ship it.**
 
 ---
 
@@ -16,7 +16,7 @@ Turn a call you've already had into LinkedIn posts you can actually publish. Not
 1. **Never fabricate.** No invented quotes, numbers, names, or outcomes. If it's not in the transcript, it didn't happen. Missing detail on an angle → drop that angle, don't pad it.
 2. **Never use a real client or company name in a draft** unless the user explicitly confirmed it's OK in intake Q2. Default to role-based descriptors: "a client I work with," "a SaaS founder on the call."
 3. **Never the em dash.** Never bold. Never stacked negatives ("No X. No Y. No Z."). Never "Here's the thing" / "Let's dive in" / "In today's fast-paced world."
-4. **Hook ≤ 8 words. Body 120-300 words preferred, 400 hard max.**
+4. **Short-draft mode only: hook ≤ 8 words, body 120-300 words preferred, 400 hard max.** The article brief has no word cap, it's raw material, not a finished post.
 5. **Every draft must trace to a specific, concrete transcript detail** — a real quote, number, or moment. A draft that could've been written without reading the transcript is a failed draft, full stop.
 5b. **Every draft follows the why-then-steps shape** (see `framework.md` / `craft-rules.md`): a short why, then 3-6 real, numbered steps. This applies to every draft, not just ones tagged "how-to." A draft with no concrete steps is a failed draft.
 6. **One file write per run.** Saves to `./outputs/` in the current working directory, never inside the skill's own installed folder.
@@ -121,13 +121,15 @@ Never silently auto-picks without showing the full list first.
 
 ---
 
-## STEP 5.5 — ARTICLE BRIEF (alternate mode, on request)
+## STEP 6 — ARTICLE BRIEF (default output)
 
-If the user asks for a brief instead of finished posts, skip to `framework.md`'s "Optional: article brief instead of short drafts" section and produce that instead of Step 6-9's short drafts. Same hard rules and gate-check still apply.
+The default output of this skill is an article brief, not short posts. Go to `framework.md`'s "Optional: article brief instead of short drafts" section and produce that. Same hard rules and gate-check still apply. Validated against two real calls, this is the standard path, not a fallback.
+
+**If the user asks for finished short LinkedIn posts instead** ("give me posts," "I just want drafts, not a brief"), use the alternate short-draft flow below instead of the brief.
 
 ---
 
-## STEP 6 — DRAFT
+## ALTERNATE — SHORT DRAFTS (on request only)
 
 For each selected angle, write one finished, ready-to-post draft using `craft-rules.md` and the active voice (`voice-template.md` if `filled_in: true`, else `voice-reference.md` with `[VOICE NEEDS CUSTOMIZING]` flags).
 
@@ -148,13 +150,13 @@ For each selected angle, write one finished, ready-to-post draft using `craft-ru
 
 If any check fails, rewrite before presenting.
 
-**Build the gate-check block** (see Step 7) from the results of these checks, this is the one place the checking work becomes visible, everything else about Step 6 stays silent.
+**Build the gate-check block** (see Step 7) from the results of these checks, this is the one place the checking work becomes visible, everything else here stays silent.
 
 ---
 
 ## STEP 7 — PRESENT
 
-Show a gate-check block first, then all drafts, using the `html-template.html` shell.
+Show a gate-check block first, then the output, using the matching shell in `html-template.html` (article brief by default, short drafts if that mode was used).
 
 **Gate-check block:** one line per check, ✓ if it held across every draft in the batch, ✗ with a one-line reason if a check ever failed and had to be rewritten (never hide a rewrite, show it happened):
 
@@ -168,7 +170,7 @@ Show a gate-check block first, then all drafts, using the `html-template.html` s
 
 This is the only place Step 6's checks become visible. Don't narrate individual rewrites in chat, just report the final state here.
 
-**Then the drafts:** draft number, source angle, hook, word count, full text.
+**Then the output:** the article brief (working angle, why, steps, extra material) by default, or the short drafts (draft number, source angle, hook, word count, full text) if that mode was requested instead.
 
 ---
 
@@ -176,9 +178,9 @@ This is the only place Step 6's checks become visible. Don't narrate individual 
 
 Ask:
 
-> "Tell me what to change on any draft, or say 'ship it.' Up to 5 revision rounds."
+> "Tell me what to change, or say 'ship it.' Up to 5 revision rounds."
 
-State which draft you're rewriting before rewriting it.
+State what you're rewriting before rewriting it.
 
 ---
 
@@ -187,10 +189,10 @@ State which draft you're rewriting before rewriting it.
 On "ship it":
 
 1. **Save location:** `./outputs/` in the current working directory. Create it if missing. Never save inside the installed skill's own folder (resolves to a hidden system path the user can't find). If not writable, fall back to `~/Downloads/`, no asking.
-2. **Filename:** `call-to-content-{slug}-{YYYY-MM-DD}.md`, slug from intake Q1, lowercase, dashes, max 40 chars.
+2. **Filename:** `article-brief-{slug}-{YYYY-MM-DD}.md` for the default brief output, or `call-to-content-{slug}-{YYYY-MM-DD}.md` for short drafts, slug from intake Q1, lowercase, dashes, max 40 chars.
 3. **Versioning:** if the filename exists, append `-v2`, `-v3`, never overwrite.
-4. **Content:** all finished drafts, plus a short "other angles surfaced, not drafted" list at the bottom (single run only, not a persistent cross-session file).
-5. **Report:** full path, word counts per draft, voice status (custom / fallback).
+4. **Content:** the full brief (or all finished drafts, if that mode was used), plus a short "other angles surfaced, not used" list at the bottom (single run only, not a persistent cross-session file).
+5. **Report:** full path, voice status (custom / fallback).
 
 ---
 
@@ -207,9 +209,9 @@ On "ship it":
 
 - Does not invent quotes, numbers, or outcomes. Missing material means fewer angles, not padded ones.
 - Does not store or ask for an API key from any note-taker. If Fireflies is already connected in your own Claude account, it can pull your latest transcript automatically, that's the one exception. Every other note-taker: you bring the transcript, paste or file.
-- Does not write emails, landing pages, or lead magnets. LinkedIn posts only.
+- Does not write emails, landing pages, or lead magnets. LinkedIn content only, as a brief by default or as short drafts on request.
 - Does not track to-dos or action items from the call. Content only.
-- Does not auto-post to LinkedIn. Saves drafts locally. Posting is on you.
+- Does not auto-post to LinkedIn. Saves output locally. Posting is on you.
 - Does not promise virality. It gives your real material the best shot at sounding like you.
 
 ---
